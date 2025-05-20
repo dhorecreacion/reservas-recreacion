@@ -1,0 +1,64 @@
+    <!DOCTYPE html>
+    <html lang="es">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Reserva de la Sala SUM</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Framer Motion for animations -->
+    <script src="https://unpkg.com/framer-motion/dist/framer-motion.umd.js"></script>
+    <!-- Google API client -->
+    <script src="https://apis.google.com/js/api.js"></script>
+    </head>
+    <body class="bg-gray-100 min-h-screen flex items-center justify-center p-4">
+    <div class="max-w-4xl w-full bg-white rounded-2xl shadow-lg overflow-hidden grid grid-cols-1 md:grid-cols-3">
+        <!-- Sidebar -->
+        <aside class="md:col-span-1 bg-gradient-to-b from-blue-600 to-blue-500 p-8 text-white flex flex-col">
+        <h2 class="text-2xl font-bold mb-4">Reserva Sala SUM</h2>
+        <p class="mb-2">Duración:</p>
+        <select id="duration" class="p-2 rounded-lg text-gray-800 focus:outline-none mb-6">
+            <option value="30">30 min</option>
+            <option value="60" selected>1 h</option>
+            <option value="90">1 h 30 min</option>
+        </select>
+        <p class="text-sm mt-auto">© 2025 Mi Empresa</p>
+        </aside>
+
+        <!-- Main steps -->
+        <main class="md:col-span-2 p-8 space-y-6">
+        <!-- Paso 1: Fecha -->
+        <section id="step1" class="space-y-2">
+            <h3 class="text-xl font-semibold">1. Selecciona fecha</h3>
+            <input type="date" id="datePicker" class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-blue-400" min="" />
+        </section>
+
+        <!-- Paso 2: Horarios -->
+        <section id="step2" class="space-y-2 hidden">
+            <h3 class="text-xl font-semibold">2. Elige un horario</h3>
+            <div id="slots" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4"></div>
+        </section>
+
+        <!-- Paso 3: Formulario -->
+        <section id="step3" class="space-y-4 hidden">
+            <h3 class="text-xl font-semibold">3. Detalles & Confirmación</h3>
+            <form id="bookingForm" class="space-y-4">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <input id="firstName" type="text" placeholder="Nombre" required class="p-3 border rounded-lg focus:ring-2 focus:ring-blue-400" />
+                <input id="lastName" type="text" placeholder="Apellido" required class="p-3 border rounded-lg focus:ring-2 focus:ring-blue-400" />
+            </div>
+            <input id="email" type="email" placeholder="Correo electrónico" required class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-blue-400" />
+            <input id="meetingTitle" type="text" placeholder="Título de la reunión" required class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-blue-400" />
+            <textarea id="comments" rows="3" placeholder="Comentarios adicionales" class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-blue-400"></textarea>
+            <button type="submit" class="w-full py-3 bg-blue-600 hover:bg-blue-700 rounded-lg text-white font-semibold shadow-md transform hover:scale-105 transition">Confirmar Reserva</button>
+            </form>
+        </section>
+
+        <!-- Mensaje final -->
+        <div id="message" class="text-center text-lg font-medium text-green-600 hidden"></div>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+    </body>
+    </html>
