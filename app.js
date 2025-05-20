@@ -1,6 +1,6 @@
     // ——— CONFIG GOOGLE API ———
-    const CLIENT_ID = 'TU_OAUTH_CLIENT_ID.apps.googleusercontent.com';
-    const API_KEY   = 'TU_API_KEY';
+    const CLIENT_ID = "163517035834-eno5m2vuqnjb0sg1bm9j19s2qr69tauf.apps.googleusercontent.com";
+    const API_KEY   = 'AIzaSyDAH0__STSitqDTs4tR00XHTG5uHW0HB_U';
     const DISCOVERY_DOCS = ['https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest'];
     const SCOPES = 'https://www.googleapis.com/auth/calendar.events';
     // —————————————————————————
